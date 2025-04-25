@@ -1,3 +1,18 @@
+<!-- 
+  README: 🌸 Welcome to the Browser Environment Dashboard! 🌸
+  This dashboard was designed with a touch of girly charm, showcasing my personal and course details 
+  while offering fun interactive features like browser and page information, and navigation controls. 
+  The design is both cute and functional, creating a dynamic user experience!
+
+  This project was created using HTML, CSS, and JavaScript, with a soft, pastel aesthetic to match 
+  the feminine vibes and elegant layout. 
+
+  Author: Elyssa Rose Delfino Vasquez 
+  Course: BSIT 2A 
+  Section: 2A 
+  Academic Year: 2024-2025 
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Browser Environment Dashboard</title>
   <style>
+    /* Global body styling with a transition for smooth background color changes */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -13,6 +29,7 @@
       background-color: #fdf9fb;
     }
 
+    /* Header styling with a gradient background and animation */
     header {
       background: linear-gradient(135deg, #ff63a3, #ff9ebc);
       text-align: center;
@@ -25,11 +42,13 @@
       animation: fadeIn 1s ease-in-out;
     }
 
+    /* Keyframe for fade-in animation of the header */
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(-30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
+    /* Header title styling */
     h1 {
       font-size: 36px;
       color: #fff;
@@ -37,6 +56,7 @@
       margin-bottom: 10px;
     }
 
+    /* Flower icon animation */
     .flower-icon {
       font-size: 40px;
       animation: float 2s infinite ease-in-out;
@@ -44,11 +64,13 @@
       margin-right: 10px;
     }
 
+    /* Floating animation for flower icon */
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
 
+    /* Profile information box styling */
     .profile-info {
       text-align: left;
       max-width: 800px;
@@ -62,6 +84,7 @@
       color: #fff;
     }
 
+    /* Styling for sections of the page */
     section {
       background-color: #fff;
       margin: 30px auto;
@@ -73,12 +96,14 @@
       animation: fadeIn 1s ease-in-out;
     }
 
+    /* Section header styling */
     h2 {
       text-align: center;
       color: #0077b6;
       margin-bottom: 10px;
     }
 
+    /* Styling for info boxes inside sections */
     .info-box {
       background-color: #f9f9f9;
       padding: 15px;
@@ -89,6 +114,7 @@
       box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.03);
     }
 
+    /* Button styling with hover effects */
     button {
       padding: 10px 18px;
       margin: 8px;
@@ -100,6 +126,7 @@
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
+    /* Hover effect for buttons */
     button:hover {
       background-color: #e754a2;
       transform: scale(1.05);
@@ -107,8 +134,7 @@
   </style>
 </head>
 <body>
-  <!-- README: This webpage is a Browser Environment Dashboard created using JavaScript to display and control browser-related data. -->
-
+  <!-- Main header with personal and course information -->
   <header>
     <h1>
       <span class="flower-icon">🌸Personal & Course Profile🌸</span>
@@ -125,22 +151,27 @@
     </div>
   </header>
 
+  <!-- Section for displaying browser information -->
   <section>
     <h2> Browser Information</h2>
     <div class="info-box" id="browserInfo"></div>
   </section>
 
+  <!-- Section for displaying page information and controls -->
   <section>
     <h2> Page Information & Controls</h2>
     <div class="info-box" id="pageInfo"></div>
     <div style="text-align: center;">
+      <!-- Button to update page title -->
       <button onclick="updateTitle()">Update Page Title</button>
     </div>
   </section>
 
+  <!-- Section for navigation controls -->
   <section>
     <h2> Navigation Controls</h2>
     <div style="text-align: center;">
+      <!-- Buttons for reloading and navigating to different pages -->
       <button onclick="location.reload()">Reload Page</button>
       <button onclick="location.href='https://www.example.com'">Go to Example.com</button>
       <button onclick="history.back()">Go Back</button>
@@ -149,7 +180,7 @@
   </section>
 
   <script>
-    // Part A: Browser Info
+    // Part A: Display Browser Info
     const browserInfo = document.getElementById("browserInfo");
     browserInfo.innerHTML = ` 
       <strong>Browser:</strong> ${navigator.appName} ${navigator.appVersion}<br>
@@ -160,7 +191,7 @@
       <strong>Color Depth:</strong> ${screen.colorDepth} bits
     `;
 
-    // Part B: Page Info
+    // Part B: Display Page Info
     const pageInfo = document.getElementById("pageInfo");
     function displayPageInfo() {
       pageInfo.innerHTML = `
@@ -172,6 +203,7 @@
 
     displayPageInfo();
 
+    // Function to update the page title dynamically
     function updateTitle() {
       const newTitle = prompt("Enter new page title:");
       if (newTitle) {
@@ -180,7 +212,7 @@
       }
     }
 
-    // Part D: Dynamic Styling with Screen Info
+    // Part D: Change background color based on screen width (mobile, tablet, desktop)
     function setBackgroundColor() {
       const width = window.innerWidth;
 
@@ -193,8 +225,10 @@
       }
     }
 
+    // Event listeners for load and resize to adjust background color dynamically
     window.addEventListener("load", setBackgroundColor);
     window.addEventListener("resize", setBackgroundColor);
   </script>
 </body>
 </html>
+
